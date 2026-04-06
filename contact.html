@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Contact Us - Citispace Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ========== Base Styles ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e2b2f;
+      background-color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== Navigation - EXACTLY MATCHING PROPERTY MANAGEMENT PAGE ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid #eaf0f2;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000000;
+    }
+    
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    
+    .logo span {
+      color: #eb5c20;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #1d2031;
+      transition: color 0.2s;
+      font-size: 1rem;
+      white-space: nowrap;
+      padding: 4px 0;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #eb5c20;
+    }
+
+    /* ===== Mobile Navigation - EXACTLY MATCHING PROPERTY MANAGEMENT PAGE ===== */
+    @media (max-width: 550px) {
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 15px 0;
+      }
+      
+      .logo {
+        justify-content: center;
+        width: 100%;
+        font-size: 1.2rem;
+      }
+      
+      .logo img {
+        height: 40px;
+      }
+      
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+      }
+      
+      .nav-links a {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        padding: 4px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        gap: 12px;
+      }
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+      .logo {
+        font-size: 1.1rem;
+      }
+      .logo img {
+        height: 36px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 10px;
+      }
+      .nav-links a {
+        font-size: 0.7rem;
+      }
+      .logo {
+        font-size: 1rem;
+      }
+      .logo img {
+        height: 32px;
+      }
+    }
+
+    .highlight {
+      color: #eb5c20;
+      font-weight: 600;
+    }
+
+    /* ===== About Section with Orange Backdrop ===== */
+    .about-header {
+      background: #eb5c20;
+      color: white;
+      padding: 40px 0;
+      margin-bottom: 30px;
+      border-radius: 0 0 40px 40px;
+      text-align: center;
+    }
+    
+    .about-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+    
+    .about-header p {
+      font-size: 1rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    
+    /* Social Section - FULLY CENTERED ON MOBILE */
+    .social-section {
+      margin: 30px 0 20px;
+    }
+    
+    .social-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      color: #333;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .social-simple-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    
+    .social-group {
+      margin-bottom: 28px;
+    }
+    
+    .social-group-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0e2da;
+    }
+    
+    .social-group-title i {
+      font-size: 1.5rem;
+      color: #eb5c20;
+      width: 32px;
+    }
+    
+    .social-group-title h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c4b55;
+      margin: 0;
+      letter-spacing: -0.2px;
+    }
+    
+    .clean-social-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 16px;
+      padding-left: 44px;
+    }
+    
+    .social-link-clean {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #4a6f7c;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      background: transparent;
+      padding: 4px 0;
+    }
+    
+    .social-link-clean span {
+      color: #4a6f7c;
+      font-weight: 500;
+    }
+    
+    .social-link-clean:hover {
+      color: #eb5c20;
+    }
+    
+    .social-link-clean:hover span {
+      color: #eb5c20;
+    }
+    
+    .clean-social-list .separator {
+      color: #d4c5bc;
+      font-size: 0.7rem;
+      display: inline-block;
+    }
+    
+    /* MOBILE STYLES: FULL CENTERING for social section */
+    @media (max-width: 550px) {
+      .social-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      
+      .social-simple-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .social-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      
+      .social-group-title {
+        justify-content: center;
+        width: 100%;
+        border-bottom: 2px solid #f0e2da;
+        padding-bottom: 12px;
+        margin-bottom: 18px;
+        gap: 10px;
+      }
+      
+      .social-group-title i {
+        font-size: 1.4rem;
+        width: auto;
+      }
+      
+      .social-group-title h4 {
+        font-size: 1.1rem;
+      }
+      
+      .clean-social-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding-left: 0;
+        width: 100%;
+      }
+      
+      .clean-social-list .separator {
+        display: none;
+      }
+      
+      .social-link-clean {
+        font-size: 1rem;
+        padding: 6px 12px;
+        background: #f8f9fa;
+        border-radius: 40px;
+        min-width: 160px;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+      
+      .social-link-clean span {
+        font-weight: 500;
+      }
+      
+      .social-link-clean:hover {
+        background: #eb5c20;
+        color: white;
+        transform: translateY(-2px);
+      }
+      
+      .social-link-clean:hover span {
+        color: white;
+      }
+      
+      /* Adjust icon spacing for better visual */
+      .social-link-clean i {
+        font-size: 1.1rem;
+      }
+    }
+    
+    /* Extra small devices: additional polish */
+    @media (max-width: 380px) {
+      .social-link-clean {
+        min-width: 140px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
+      }
+      
+      .social-group-title h4 {
+        font-size: 1rem;
+      }
+      
+      .social-group-title i {
+        font-size: 1.2rem;
+      }
+    }
+    
+    /* Contact Hotline */
+    .contact-hotline {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 28px 32px;
+      background-color: #f9f5f2;
+      border-radius: 28px;
+      border-left: 4px solid #eb5c20;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    
+    .contact-hotline h4 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      color: #2c4b55;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+    }
+    
+    .contact-hotline h4 i {
+      font-size: 1.4rem;
+      color: #eb5c20;
+    }
+    
+    .contact-hotline-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    
+    .contact-hotline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .contact-hotline-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(226,125,96,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eb5c20;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-hotline-content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .contact-hotline-label {
+      font-size: 0.9rem;
+      color: #6f8e9a;
+      font-weight: 500;
+    }
+    
+    .contact-hotline-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e2b2f;
+      word-break: break-word;
+    }
+    
+    .contact-hotline-value.highlight {
+      color: #eb5c20;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 550px) {
+      .contact-hotline {
+        padding: 24px 20px;
+        margin: 30px auto;
+      }
+      
+      .contact-hotline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      
+      .contact-hotline-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+      
+      .contact-hotline-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      
+      .contact-hotline-label {
+        font-size: 0.8rem;
+      }
+      
+      .contact-hotline-value {
+        font-size: 1rem;
+      }
+    }
+
+    /* Lease Form Section with Formspree Integration */
+    .lease-form-section {
+      padding: 50px 0;
+      background: #f8f9fa;
+      border-radius: 32px;
+      margin: 30px 0;
+    }
+    
+    .headtext {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .headtext h2 {
+      font-size: 2rem;
+      color: #2c4b55;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .headtext p {
+      font-size: 0.98rem;
+      color: #5b7d88;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 30px 28px;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1e2b2f;
+      font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e3f0f5;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #eb5c20;
+      box-shadow: 0 0 0 3px rgba(226, 125, 96, 0.1);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .btn-primary {
+      background: #eb5c20;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 8px 16px -6px rgba(226,125,96,0.3);
+    }
+    
+    .btn-primary:hover {
+      background: #c44b3a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -8px rgba(226,125,96,0.4);
+    }
+    
+    .success-message {
+      margin-top: 20px;
+      padding: 15px;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 16px;
+      border-left: 4px solid #28a745;
+      text-align: center;
+      font-size: 0.9rem;
+      display: none;
+    }
+    
+    .error-message {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8d7da;
+      color: #721c24;
+      border-radius: 16px;
+      border-left: 4px solid #dc3545;
+      text-align: center;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* ===== Hiring Section ===== */
+    .hiring-section {
+      background: linear-gradient(135deg, #f9f5f2 0%, #ffffff 100%);
+      padding: 60px 0;
+      margin: 40px 0;
+      border-radius: 40px;
+      text-align: center;
+    }
+    
+    .hiring-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .hiring-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .hiring-header h2 {
+      font-size: 2.2rem;
+      color: #eb5c20;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .hiring-header p {
+      font-size: 1.1rem;
+      color: #5b7d88;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Carousel Container */
+    .carousel-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    .carousel-track-wrapper {
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+    
+    .carousel-slide {
+      flex: 0 0 100%;
+      padding: 10px;
+    }
+    
+    .job-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 32px;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      border: 1px solid rgba(226, 125, 96, 0.2);
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .job-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .job-icon {
+      width: 65px;
+      height: 65px;
+      background: #f9f5f2;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #eb5c20;
+      margin: 0 auto;
+    }
+    
+    .job-title h3 {
+      font-size: 1.4rem;
+      color: #2c4b55;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    
+    .job-type {
+      background: #eb5c20;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    
+    .qualifications {
+      margin: 8px 0;
+      text-align: center;
+    }
+    
+    .qualifications ul {
+      list-style: none;
+      margin: 16px 0;
+      padding: 0;
+      display: inline-block;
+      text-align: left;
+    }
+    
+    .qualifications li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #3d616c;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    
+    .qualifications li i {
+      color: #eb5c20;
+      min-width: 18px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    
+    .qualifications li span {
+      flex: 1;
+    }
+    
+    .apply-btn {
+      background: #eb5c20;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: fit-content;
+      align-self: center;
+    }
+    
+    .apply-btn:hover {
+      background: #c44b3a;
+      transform: translateX(5px);
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: white;
+      border: 2px solid #eb5c20;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eb5c20;
+      transition: 0.2s;
+      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    
+    .carousel-btn:hover {
+      background: #eb5c20;
+      color: white;
+      border-color: #eb5c20;
+    }
+    
+    .carousel-btn.prev { left: -8px; }
+    .carousel-btn.next { right: -8px; }
+    
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    
+    .indicator.active {
+      background: #eb5c20;
+      transform: scale(1.2);
+    }
+    
+    .hr-contact-card {
+      max-width: 550px;
+      margin: 48px auto 0;
+      background: white;
+      border-radius: 28px;
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px dashed #eb5c20;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    
+    .hr-contact-card h4 {
+      font-size: 1.25rem;
+      color: #2c4b55;
+      margin-bottom: 18px;
+    }
+    
+    .hr-contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+      align-items: center;
+    }
+    
+    .hr-contact-details p {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #4a6f7c;
+      font-size: 0.95rem;
+    }
+    
+    .hr-contact-details p i {
+      color: #eb5c20;
+      font-size: 1rem;
+    }
+    
+    .hr-note {
+      font-size: 0.85rem;
+      color: #888;
+      background: #f9f5f2;
+      padding: 10px 16px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid #d3e7ed;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #eb5c20;
+      margin-bottom: 16px;
+    }
+
+    .footer-col .logo i {
+      font-size: 1.8rem;
+      color: #0f4c5c;
+    }
+
+    .footer-col .logo span {
+      color: #0f4c5c;
+    }
+
+    .footer-col p {
+      color: #466873;
+      margin: 0 0 24px 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .footer-col p i {
+      margin-right: 8px;
+      color: #eb5c20;
+      width: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .social-icons i {
+      font-size: 1.5rem;
+      color: #0f4c5c;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f7fa;
+      border-radius: 50%;
+    }
+
+    .social-icons i:hover {
+      opacity: 1;
+      background: #eb5c20;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .footer-col h5 {
+      font-size: 1.2rem;
+      color: #0a303a;
+      margin-bottom: 24px;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h5::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background: #eb5c20;
+      border-radius: 2px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #3b606b;
+      text-decoration: none;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #eb5c20;
+      transform: translateX(5px);
+    }
+
+    .footer-col .contact-info p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      color: #3b606b;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #5b7d88;
+      font-size: 0.9rem;
+      padding-top: 32px;
+      border-top: 1px solid #d0e3e9;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-col:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 20px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-col {
+        text-align: center;
+      }
+      .footer-col .logo {
+        justify-content: center;
+      }
+      .footer-col h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .footer-col a:hover {
+        transform: translateX(0) scale(1.05);
+      }
+      .footer-col .contact-info p {
+        justify-content: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .carousel-container {
+        padding: 0 28px;
+        max-width: 100%;
+      }
+      .job-card {
+        padding: 20px 24px;
+      }
+      .qualifications ul {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .carousel-container {
+        max-width: 600px;
+      }
+    }
+    
+    @media (min-width: 600px) {
+      .about-header h1 {
+        font-size: 2.5rem;
+      }
+      .about-header p {
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (min-width: 900px) {
+      .about-header {
+        padding: 50px 0;
+      }
+      .about-header h1 {
+        font-size: 3rem;
+      }
+      .about-header p {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 550px) {
+      .job-header {
+        gap: 8px;
+      }
+      .job-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+      .job-title h3 {
+        font-size: 1.2rem;
+      }
+      .qualifications li {
+        font-size: 0.8rem;
+        gap: 8px;
+      }
+      .apply-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .hr-contact-card {
+        margin: 30px 16px;
+        padding: 20px;
+      }
+      .hr-contact-details p {
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .job-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="Cpms logo (black).png" alt="Citispace Properties Logo"> 
+        Citispace <span>Properties</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dorms.html">Dorms</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="prop.html">Property Management</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
+
+    <!-- About Section with Orange Backdrop -->
+    <div class="about-header">
+      <div class="container">
+        <h1>About <span style="color: #ffffff;">Citispace Properties</span></h1>
+        <p>We are a leading property management firm in Metro Manila, specializing in dormitories, homestays, and full-service management. We offer end-to-end solutions that simplify operations and enhance living experiences—making homes more valuable through professional, reliable, and personalized service</p>
+      </div>
+    </div>
+
+    <!-- Social Media Section - NOW FULLY CENTERED ON MOBILE -->
+    <section class="social-section">
+      <div class="container">
+        <h3>Connect With Us</h3>
+        <div class="social-simple-wrapper">
+          <div class="social-group">
+            <div class="social-group-title">
+              <i class="fab fa-facebook-f"></i>
+              <h4>Facebook Pages</h4>
+            </div>
+            <div class="clean-social-list">
+              <a href="https://www.facebook.com/citispacedorms" target="_blank" class="social-link-clean"><i class="fab fa-facebook-f"></i><span>Citispace Dorms</span></a>
+              <a href="https://www.facebook.com/citispacerentalsph" target="_blank" class="social-link-clean"><i class="fab fa-facebook-f"></i><span>Citispace Rentals</span></a>
+              <a href="https://www.facebook.com/citispacepropertiesph" target="_blank" class="social-link-clean"><i class="fab fa-facebook-f"></i><span>Citispace Properties</span></a>
+              <a href="https://www.facebook.com/profile.php?id=61578935614046" target="_blank" class="social-link-clean"><i class="fab fa-facebook-f"></i><span>Citispace Careers</span></a>
+            </div>
+          </div>
+          <div class="social-group">
+            <div class="social-group-title">
+              <i class="fab fa-tiktok"></i>
+              <h4>TikTok Accounts</h4>
+            </div>
+            <div class="clean-social-list">
+              <a href="https://www.tiktok.com/@citispaceph?lang=en" target="_blank" class="social-link-clean"><i class="fab fa-tiktok"></i><span>Citispace PH</span></a>
+              <a href="https://www.tiktok.com/@citispacedorms?lang=en" target="_blank" class="social-link-clean"><i class="fab fa-tiktok"></i><span>Citispace Dorms</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lease Your Property Form -->
+    <section class="lease-form-section">
+      <div class="container">
+        <div class="headtext">
+          <h2>Lease Your Property With Us</h2>
+          <p>Interested in leasing your property? Fill out the form below, and our <span class="highlight">property management team</span> will contact you.</p>
+        </div>
+        <form id="leaseForm" class="contact-form" action="https://formspree.io/f/xbdzwjbq" method="POST">
+          <input type="hidden" name="_subject" value="New Leasing Inquiry - Citispace Properties">
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_next" value="https://citispaceproperties.com/thank-you.html">
+          
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="full_name" required placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="phone">Contact Number *</label>
+            <input type="tel" id="phone" name="contact_number" required placeholder="e.g., +63 917 123 4567">
+          </div>
+          <div class="form-group">
+            <label for="propertyDetails">Property Details *</label>
+            <input type="text" id="propertyDetails" name="property_details" required placeholder="e.g., Ridgewood Towers Unit 1234, Taguig">
+          </div>
+          <div class="form-group">
+            <label for="message">Leasing Requirements *</label>
+            <textarea id="message" name="leasing_requirements" required placeholder="Tell us about your property and leasing goals..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Submit Leasing Inquiry</button>
+          <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i> Your leasing inquiry has been sent successfully! Our team will contact you within 24 hours.
+          </div>
+          <div id="errorMessage" class="error-message">
+            <i class="fas fa-exclamation-circle"></i> There was an error sending your inquiry. Please try again or contact us directly.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Join Our Team / HR Section -->
+    <section class="hiring-section">
+      <div class="hiring-container">
+        <div class="hiring-header">
+          <h2>Join Our Team</h2>
+          <p>Build your career with <span class="highlight">Citispace Properties</span> – we're looking for passionate individuals!</p>
+        </div>
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide">
+                <div class="job-card">
+                  <div class="job-header">
+                    <div class="job-icon"><i class="fas fa-tools"></i></div>
+                    <div class="job-title">
+                      <h3>Maintenance Technician</h3>
+                      <span class="job-type">Full Time</span>
+                    </div>
+                  </div>
+                  <div class="qualifications">
+                    <ul>
+                      <li><i class="fas fa-wrench"></i> <span>Plumbing repairs & leak fixing</span></li>
+                      <li><i class="fas fa-bolt"></i> <span>Electrical troubleshooting</span></li>
+                      <li><i class="fas fa-wind"></i> <span>Aircon & refrigerator servicing</span></li>
+                      <li><i class="fas fa-hammer"></i> <span>Carpentry & general maintenance</span></li>
+                    </ul>
+                  </div>
+                  <button class="apply-btn" onclick="applyForJob('Maintenance Technician')">Apply Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="job-card">
+                  <div class="job-header">
+                    <div class="job-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="job-title">
+                      <h3>Marketing Interns</h3>
+                      <span class="job-type">Internship</span>
+                    </div>
+                  </div>
+                  <div class="qualifications">
+                    <ul>
+                      <li><i class="fas fa-bullseye"></i> <span>Hands-On Real Estate Marketing</span></li>
+                      <li><i class="fas fa-paint-brush"></i> <span>Creative Portfolio (Ads & Videos)</span></li>
+                      <li><i class="fas fa-share-alt"></i> <span>Social Media & Digital Marketing</span></li>
+                      <li><i class="fas fa-users"></i> <span>Real Client Exposure</span></li>
+                    </ul>
+                  </div>
+                  <button class="apply-btn" onclick="applyForJob('Marketing Intern')">Apply Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="job-card">
+                  <div class="job-header">
+                    <div class="job-icon"><i class="fas fa-calculator"></i></div>
+                    <div class="job-title">
+                      <h3>Accounting Interns</h3>
+                      <span class="job-type">Internship</span>
+                    </div>
+                  </div>
+                  <div class="qualifications">
+                    <ul>
+                      <li><i class="fas fa-hand-holding-usd"></i> <span>Real Estate Accounting Experience</span></li>
+                      <li><i class="fas fa-building"></i> <span>Property Management Finance</span></li>
+                      <li><i class="fas fa-chart-pie"></i> <span>Practical Training & Mentorship</span></li>
+                    </ul>
+                  </div>
+                  <button class="apply-btn" onclick="applyForJob('Accounting Intern')">Apply Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-indicators" id="indicators"><span class="indicator active" onclick="goToSlide(0)"></span><span class="indicator" onclick="goToSlide(1)"></span><span class="indicator" onclick="goToSlide(2)"></span></div>
+        </div>
+        <div class="hr-contact-card">
+          <h4>Ready to Join Our Team?</h4>
+          <div class="hr-contact-details">
+            <p><i class="fas fa-envelope"></i> <strong>hr@citispaceproperties.com</strong></p>
+            <p><i class="fas fa-phone-alt"></i> <strong>+63 915 928 1059</strong></p>
+          </div>
+          <div class="hr-note">
+            <i class="fas fa-file-alt"></i> Send your CV and cover letter to apply today!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Hotline -->
+    <div class="contact-hotline">
+      <h4>Quick Contact Hotlines</h4>
+      <div class="contact-hotline-item">
+        <div class="contact-hotline-icon"><i class="fas fa-phone"></i></div>
+        <div class="contact-hotline-content">
+          <span class="contact-hotline-label">Main Line</span>
+          <span class="contact-hotline-value highlight">(02) 8244-2883</span>
+        </div>
+      </div>
+      <div class="contact-hotline-item">
+        <div class="contact-hotline-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="contact-hotline-content">
+          <span class="contact-hotline-label">Marketing</span>
+          <span class="contact-hotline-value highlight">+63 915 9281 059</span>
+        </div>
+      </div>
+      <div class="contact-hotline-item">
+        <div class="contact-hotline-icon"><i class="fas fa-envelope"></i></div>
+        <div class="contact-hotline-content">
+          <span class="contact-hotline-label">Email</span>
+          <span class="contact-hotline-value highlight">pmo@citispaceproperties.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">
+            <span>Citispace Properties</span>
+          </div>
+          <p>Making property management simpler, making living experiences better. Rentals · Homestays · Property Management, one-stop professional service.</p>
+          <div class="social-icons">
+            <i class="fab fa-facebook-f" onclick="window.open('https://www.facebook.com/citispacedorms')"></i>
+            <i class="fab fa-tiktok" onclick="window.open('https://www.tiktok.com/@citispacedorms?lang=en')"></i>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="dorms.html">Dorms</a>
+          <a href="homestay.html">Homestays</a>
+          <a href="prop.html">Property Management</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <div class="contact-info">
+            <p><i class="fa-regular fa-envelope"></i> pmo@citispaceproperties.com</p>
+            <p><i class="fas fa-phone"></i> (02) 8244-2883</p>
+            <p><i class="fa-regular fa-clock"></i> Mon‑Sun 9:00 am - 6:00 pm</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 <span class="highlight">Citispace Properties</span> · Making Homes More Valuable</div>
+    </footer>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = slides.length;
+    
+    function updateCarousel() { 
+      if(track) track.style.transform = `translateX(-${currentSlide * 100}%)`; 
+      indicators.forEach((ind, i) => { 
+        if(i===currentSlide) ind.classList.add('active'); 
+        else ind.classList.remove('active'); 
+      }); 
+    }
+    
+    function moveSlide(d) { 
+      currentSlide += d; 
+      if(currentSlide<0) currentSlide = totalSlides-1; 
+      if(currentSlide>=totalSlides) currentSlide=0; 
+      updateCarousel(); 
+    }
+    
+    function goToSlide(i) { 
+      currentSlide=i; 
+      updateCarousel(); 
+    }
+    
+    function applyForJob(jobTitle) { 
+      window.location.href = `mailto:hr@citispaceproperties.com?subject=${encodeURIComponent(`Application for ${jobTitle} Position`)}&body=${encodeURIComponent(`I am interested in applying for the ${jobTitle} position at Citispace Properties.\n\nPlease find my attached resume.`)}`; 
+    }
+    
+    // Formspree form handling
+    const leaseForm = document.getElementById('leaseForm');
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('errorMessage');
+    
+    if (leaseForm) {
+      leaseForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+        
+        const formData = new FormData(leaseForm);
+        
+        try {
+          const response = await fetch(leaseForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            successMsg.style.display = 'block';
+            leaseForm.reset();
+            setTimeout(() => {
+              successMsg.style.display = 'none';
+            }, 5000);
+          } else {
+            errorMsg.style.display = 'block';
+            setTimeout(() => {
+              errorMsg.style.display = 'none';
+            }, 5000);
+          }
+        } catch (error) {
+          errorMsg.style.display = 'block';
+          setTimeout(() => {
+            errorMsg.style.display = 'none';
+          }, 5000);
+        }
+      });
+    }
+    
+    let touchStartX=0; 
+    if(track){ 
+      track.addEventListener('touchstart',(e)=>{ 
+        touchStartX=e.changedTouches[0].screenX; 
+      }); 
+      track.addEventListener('touchend',(e)=>{ 
+        let endX=e.changedTouches[0].screenX; 
+        if(endX<touchStartX-50) moveSlide(1); 
+        else if(endX>touchStartX+50) moveSlide(-1); 
+      }); 
+    }
+  </script>
+</body>
+</html>

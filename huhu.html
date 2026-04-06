@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorms - Citispace Properties</title>
+  <!-- Fonts & icons -->
+   <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .slideshow-dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .slideshow-dot.active {
+      background-color: #157fd1;
+    }
+    
+    .slideshow-dot:hover {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-house-chimney-window"></i>
+        Citispace <span>Properties</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dorms.html" class="active">Dorms</a>
+        <a href="#">Homestay</a>
+        <a href="#">Property Management</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Premium Dormitory Solutions</h1>
+        <p>Affordable, comfortable, and well-managed dormitories near BGC and other business districts. Choose from various room types to suit your needs and budget.</p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+      <h2 class="filter-title">Filter by Room Type</h2>
+      <div class="filter-tags">
+        <div class="filter-tag active" data-filter="all" data-filter-type="room">All Rooms</div>
+        <div class="filter-tag" data-filter="classic" data-filter-type="room">Classic Room (6 pax)</div>
+        <div class="filter-tag" data-filter="quad" data-filter-type="room">Quad-sharing (4 pax)</div>
+        <div class="filter-tag" data-filter="double" data-filter-type="room">Double-sharing (2 pax)</div>
+        <div class="filter-tag" data-filter="solo" data-filter-type="room">Solo Room (1 pax)</div>
+      </div> 
+        <br>
+      <div class="filter-tags">
+        <div class="filter-tag active" data-filter="all" data-filter-type="location">All Locations</div>
+        <div class="filter-tag" data-filter="taguig" data-filter-type="location">Taguig</div>
+        <div class="filter-tag" data-filter="mandaluyong" data-filter-type="location">Mandaluyong</div>
+      </div>
+      <br>
+      <br>
+
+    <!-- Room Grid -->
+    <section class="room-grid">
+
+
+      <!-- Classic Room -->
+      <div class="room-card" data-type="classic">
+        <div class="room-image">
+          <img src="classic.jpg" alt="Classic Room">
+          <div class="room-type">Classic Room</div>
+          <div class="room-capacity">
+            <i class="fas fa-users"></i> 6 pax
+          </div>
+        </div>
+        <div class="room-content">
+          <h3 class="room-title">Classic Room</h3>
+          <p class="room-description">Comfortable classic room with essential amenities. Ideal for individuals looking for affordable accommodation near their workplace.</p>
+          <div class="room-features">
+            <span class="feature-badge"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="feature-badge"><i class="fas fa-snowflake"></i> Aircon</span>
+            <span class="feature-badge"><i class="fas fa-bed"></i> Bunk Beds</span>
+            <span class="feature-badge"><i class="fas fa-lock"></i> Drawers</span>
+            <span class="feature-badge"><i class="fas fa-bath"></i> Shared CR</span>
+            <span class="feature-badge"><i class="fas fa-utensils"></i> Kitchen</span>
+          </div>
+          <div class="room-price">₱5,000 <small>/month per person</small></div>
+          <div class="room-actions">
+            <a href="#" class="btn-secondary" onclick="showRoomDetails('Classic Room')">View Details</a>
+            <a href="#" class="btn-primary" onclick="openAppointmentModal()">Set Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quad-sharing -->
+      <div class="room-card" data-type="quad">
+        <div class="room-image">
+          <img src="quadsharing.jpg" alt="Quad-sharing Room">
+          <div class="room-type">Quad-sharing</div>
+          <div class="room-capacity">
+            <i class="fas fa-users"></i> 4 pax
+          </div>
+        </div>
+        <div class="room-content">
+          <h3 class="room-title">Quad-sharing Room</h3>
+          <p class="room-description">Cozy quad-sharing room offering more personal space while still being budget-friendly. Perfect for small groups or individuals who prefer fewer roommates.</p>
+          <div class="room-features">
+            <span class="feature-badge"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="feature-badge"><i class="fas fa-snowflake"></i> Aircon</span>
+            <span class="feature-badge"><i class="fas fa-bed"></i> Bunk Beds</span>
+            <span class="feature-badge"><i class="fas fa-lock"></i> Drawers</span>
+            <span class="feature-badge"><i class="fas fa-bath"></i> Shared CR</span>
+            <span class="feature-badge"><i class="fas fa-coffee"></i> Kitchen</span>
+          </div>
+          <div class="room-price">₱6,500 <small>/month per person</small></div>
+          <div class="room-actions">
+            <a href="#" class="btn-secondary" onclick="showRoomDetails('Quad-sharing Room')">View Details</a>
+            <a href="#" class="btn-primary" onclick="openAppointmentModal()">Set Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Double-sharing -->
+      <div class="room-card" data-type="double">
+        <div class="room-image">
+          <img src="doublesharing.jpg" alt="Double-sharing Room">
+          <div class="room-type">Double-sharing</div>
+          <div class="room-capacity">
+            <i class="fas fa-users"></i> 2 pax
+          </div>
+        </div>
+        <div class="room-content">
+          <h3 class="room-title">Double-sharing Room</h3>
+          <p class="room-description">Comfortable double-sharing room for those who prefer more privacy. Perfect for friends or colleagues who want to share accommodation.</p>
+          <div class="room-features">
+            <span class="feature-badge"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="feature-badge"><i class="fas fa-snowflake"></i> Aircon</span>
+            <span class="feature-badge"><i class="fas fa-bed"></i> Single/Bunk Beds</span>
+            <span class="feature-badge"><i class="fas fa-lock"></i> Drawers</span>
+            <span class="feature-badge"><i class="fas fa-bath"></i> Shared CR</span>
+            <span class="feature-badge"><i class="fas fa-tv"></i> Kitchen</span>
+          </div>
+          <div class="room-price">₱7,500 <small>/month per person</small></div>
+          <div class="room-actions">
+            <a href="#" class="btn-secondary" onclick="showRoomDetails('Double-sharing Room')">View Details</a>
+            <a href="#" class="btn-primary" onclick="openAppointmentModal()">Set Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solo Room -->
+      <div class="room-card" data-type="solo">
+        <div class="room-image">
+          <img src="solo.jpg" alt="Solo Room">
+          <div class="room-type">Solo Room</div>
+          <div class="room-capacity">
+            <i class="fas fa-user"></i> 1 pax
+          </div>
+        </div>
+        <div class="room-content">
+          <h3 class="room-title">Solo Room</h3>
+          <p class="room-description">Private solo room for maximum privacy and comfort. Perfect for professionals who value their personal space after a long day at work.</p>
+          <div class="room-features">
+            <span class="feature-badge"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="feature-badge"><i class="fas fa-snowflake"></i> Aircon</span>
+            <span class="feature-badge"><i class="fas fa-bed"></i> Solo bed</span>
+            <span class="feature-badge"><i class="fas fa-desk"></i> Private space</span>
+            <span class="feature-badge"><i class="fas fa-bath"></i> Shared CR</span>
+            <span class="feature-badge"><i class="fas fa-tv"></i> Kitchen</span>
+          </div>
+          <div class="room-price">₱8,500 <small>/month</small></div>
+          <div class="room-actions">
+            <a href="#" class="btn-secondary" onclick="showRoomDetails('Solo Room')">View Details</a>
+            <a href="#" class="btn-primary" onclick="openAppointmentModal()">Set Appointment</a>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 0;">
+            <i class="fas fa-house-chimney-window"></i>
+            <span>Citispace Properties</span>
+          </div>
+          <p>Making property management simpler, making living experiences better. Rentals · Homestays · Property Management, one‑stop professional service.</p>
+          <div class="social-icons">
+            <i href="https://www.facebook.com/citispacedorms" class="fab fa-facebook"></i>
+            <i href="https://www.tiktok.com/@citispacedorms?lang=en" class="fab fa-tiktok"></i>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="dorms.html">Dorms</a>
+          <a href="#">Homestays</a>
+          <a href="#">Property Management</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><i class="fa-regular fa-envelope" style="margin-right: 8px;"></i>pmo@citispaceproperties.com</p>
+          <p><i class="fa-regular fa-phone"></i> (02) 8244-2883</p>
+          <p><i class="fa-regular fa-clock"></i> Mon‑Sun 9:00 am ‑ 6:00 pm</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 Citispace Properties · Making Homes More Valuable
+      </div>
+    </footer>
+  </div>
+
+  <!-- Room Details Modal -->
+  <div id="roomDetailsModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; width: 90%;">
+      <span class="modal-close" onclick="closeRoomDetailsModal()">&times;</span>
+      
+      <!-- Left Column - Room Details -->
+      <div class="w-1/2 bg-blue-600 text-white p-8 flex flex-col">
+        <div id="roomDetailsContent">
+          <!-- Content will be dynamically inserted here -->
+        </div>
+        <div class="mt-auto pt-6">
+          <button onclick="closeRoomDetailsModal(); openAppointmentModal();" class="w-full bg-white text-blue-600 py-3 px-6 rounded-lg font-bold hover:bg-gray-100 transition-colors">Set Appointment</button>
+        </div>
+      </div>
+      
+      <!-- Right Column - Image Slideshow -->
+      <div class="w-1/2 bg-white p-4">
+        <div class="slideshow-container" style="position: relative; height: 400px;">
+          <div id="slideshowImages" class="h-full">
+            <!-- Images will be dynamically inserted here -->
+          </div>
+          <div class="slideshow-controls" style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;">
+            <span class="slideshow-dot active" onclick="currentSlide(1)"></span>
+            <span class="slideshow-dot" onclick="currentSlide(2)"></span>
+            <span class="slideshow-dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Appointment Modal -->
+  <div id="appointmentModal" class="modal">
+    <div class="modal-content">
+      <!-- Left Column - Contact Info -->
+      <div class="w-1/2 bg-blue-600 text-white p-8 flex flex-col justify-center">
+        <span class="modal-close" onclick="closeAppointmentModal()">&times;</span>
+        <h2 class="text-2xl font-bold mb-4">Schedule an Appointment</h2>
+        <p class="mb-6">Our sales team is ready to assist you. All inquiries are answered within 24 hours.</p>
+        
+        <div class="contact-info bg-white/10 backdrop-blur-sm p-6 rounded-xl mb-6">
+          <div class="contact-phone">+63 973 123 4567</div>
+          <div class="contact-hours">Available Mon-Fri: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</div>
+        </div>
+        
+        <div class="mb-6">
+          <h3 class="font-bold mb-3">FOLLOW US ON OUR PAGE</h3>
+          <div class="flex space-x-4">
+            <i class="fab fa-facebook-f text-xl"></i>
+            <i class="fab fa-instagram text-xl"></i>
+            <i class="fab fa-twitter text-xl"></i>
+            <i class="fab fa-viber text-xl"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Booking Form -->
+      <div class="w-1/2 p-8">
+        <h3 class="text-xl font-bold mb-6">Please fill out the form below to schedule your viewing</h3>
+        <form id="bookingForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+              <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+              <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Contact Number *</label>
+            <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Viewing Date *</label>
+              <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Viewing Time *</label>
+              <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Interested Room Type *</label>
+            <select id="preferredRoom" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+              <option>Classic Room (6 pax)</option>
+              <option>Quad-sharing (4 pax)</option>
+              <option>Double-sharing (2 pax)</option>
+              <option>Solo Room (1 pax)</option>
+              <option>Upper Deck</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 transition-colors">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterTags = document.querySelectorAll('.filter-tag');
+      const roomCards = document.querySelectorAll('.room-card');
+      let activeRoomFilter = 'all';
+      let activeLocationFilter = 'all';
+
+      filterTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+          const filterType = this.getAttribute('data-filter-type');
+          
+          // Remove active class only from tags of the same type
+          filterTags.forEach(t => {
+            if (t.getAttribute('data-filter-type') === filterType) {
+              t.classList.remove('active');
+            }
+          });
+          
+          // Add active class to clicked tag
+          this.classList.add('active');
+
+          // Update active filters
+          if (filterType === 'room') {
+            activeRoomFilter = this.getAttribute('data-filter');
+          } else if (filterType === 'location') {
+            activeLocationFilter = this.getAttribute('data-filter');
+          }
+
+          // Apply both filters simultaneously
+          roomCards.forEach(card => {
+            const roomTypeMatch = activeRoomFilter === 'all' || card.getAttribute('data-type') === activeRoomFilter;
+            const locationMatch = activeLocationFilter === 'all' || card.getAttribute('data-location') === activeLocationFilter;
+            
+            if (roomTypeMatch && locationMatch) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeIn 0.5s ease-in-out';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Modal functionality
+    function openAppointmentModal() {
+      document.getElementById('appointmentModal').style.display = 'block';
+      // Set minimum date for viewing and move-in dates (today)
+      const today = new Date().toISOString().split('T')[0];
+      const dateInputs = document.querySelectorAll('input[type="date"]');
+      dateInputs.forEach(input => {
+        input.setAttribute('min', today);
+      });
+    }
+
+    function closeAppointmentModal() {
+      document.getElementById('appointmentModal').style.display = 'none';
+    }
+
+    // Room details function
+    function showRoomDetails(roomType) {
+      const details = {
+        'Classic Room': `
+🏠 CLASSIC ROOM (6 pax) - COMPLETE DETAILS
+
+🏠 INCLUSIONS/AMENITIES:
+✅ Free Wi-Fi
+✅ Free access to pool and gym
+✅ Regular Housekeeping
+✅ 24/7 CCTV Security
+✅ Fully-furnished units
+✅ Can cook
+✅ With washing machine
+
+📋 IMPORTANT NOTES:
+1. Above rates are good for 6 months contract only.
+2. Php500 additional monthly rental rate below 6 months contract.
+3. For 1 month contract only: ADD 2,500 for all in rate for electric and water PLUS Php500 additional monthly rental below 6 months contracts.
+
+📍 LOCATION: Near BGC, Taguig City
+🕒 AVAILABILITY: Check with sales team
+📞 CONTACT: +63 917 123 4567
+
+For immediate assistance, please call our sales team.
+        `,
+        'Quad-sharing Room': `
+🏠 QUAD-SHARING ROOM (4 pax) - COMPLETE DETAILS
+
+🏠 INCLUSIONS/AMENITIES:
+✅ Free Wi-Fi
+✅ Free access to pool and gym
+✅ Regular Housekeeping
+✅ 24/7 CCTV Security
+✅ Fully-furnished units
+✅ Can cook
+✅ With washing machine
+
+📋 IMPORTANT NOTES:
+1. Above rates are good for 6 months contract only.
+2. Php500 additional monthly rental rate below 6 months contract.
+3. For 1 month contract only: ADD 2,500 for all in rate for electric and water PLUS Php500 additional monthly rental below 6 months contracts.
+
+📍 LOCATION: Near BGC, Taguig City
+🕒 AVAILABILITY: Check with sales team
+📞 CONTACT: +63 917 123 4567
+
+For immediate assistance, please call our sales team.
+        `,
+        'Double-sharing Room': `
+🏠 DOUBLE-SHARING ROOM (2 pax) - COMPLETE DETAILS
+
+🏠 INCLUSIONS/AMENITIES:
+✅ Free Wi-Fi
+✅ Free access to pool and gym
+✅ Regular Housekeeping
+✅ 24/7 CCTV Security
+✅ Fully-furnished units
+✅ Can cook
+✅ With washing machine
+
+📋 IMPORTANT NOTES:
+1. Above rates are good for 6 months contract only.
+2. Php500 additional monthly rental rate below 6 months contract.
+3. For 1 month contract only: ADD 2,500 for all in rate for electric and water PLUS Php500 additional monthly rental below 6 months contracts.
+
+📍 LOCATION: Near BGC, Mandaluyong City
+🕒 AVAILABILITY: Check with sales team
+📞 CONTACT: +63 917 123 4567
+
+For immediate assistance, please call our sales team.
+        `,
+        'Solo Room': `
+🏠 SOLO ROOM (1 pax) - COMPLETE DETAILS
+
+🏠 INCLUSIONS/AMENITIES:
+✅ Free Wi-Fi
+✅ Free access to pool and gym
+✅ Regular Housekeeping
+✅ 24/7 CCTV Security
+✅ Fully-furnished units
+✅ Can cook
+✅ With washing machine
+
+📋 IMPORTANT NOTES:
+1. Above rates are good for 6 months contract only.
+2. Php500 additional monthly rental rate below 6 months contract.
+3. For 1 month contract only: ADD 2,500 for all in rate for electric and water PLUS Php500 additional monthly rental below 6 months contracts.
+
+📍 LOCATION: Near BGC, Mandaluyong City
+🕒 AVAILABILITY: Check with sales team
+📞 CONTACT: +63 917 123 4567
+
+For immediate assistance, please call our sales team.
+        `
+      };
+      
+      alert(details[roomType] || 'Room details not available');
+    }
+
+    // Form submission
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('appointmentForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Show success message
+          alert('Thank you for submitting your appointment request!\n\nOur sales team will contact you within 24 hours to confirm your viewing schedule.\n\nFor urgent inquiries, please call us at +63 917 123 4567.');
+          
+          // Reset form and close modal
+          form.reset();
+          closeAppointmentModal();
+        });
+      }
+    });
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('appointmentModal');
+      if (event.target === modal) {
+        closeAppointmentModal();
+      }
+    }
+
+    // Add fade-in animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
